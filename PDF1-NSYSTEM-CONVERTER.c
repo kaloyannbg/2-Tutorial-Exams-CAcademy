@@ -1,11 +1,9 @@
 #include <stdio.h>
 #include <math.h>
 
-//I WILL MAKE UPDATES TOMMOROW
-
 void printMenu(void);
 int fromDecToBase(int number, int base);
-int fromBinToDec(int number);
+int fromBaseToDec(int number, int base);
 int main() {
 
     int iChoice = 0;
@@ -38,10 +36,13 @@ int main() {
          break;
 
          case 2:
-        printf("\n\n -- Enter your number in Binary: ");
+        printf("\n\n -- Enter your base (Number system): ");
+         scanf("%d", &iBase);
+         iNumber = abs(iBase);
+         printf("\n\n -- Enter your number in base(%d) number system: ", iBase);
          scanf("%d", &iNumber);
          iNumber = abs(iNumber);
-         printf("\n -- Your number in DEC is: %d --", fromBinToDec(iNumber));
+         printf("\n -- Your number in DEC is: %d --", fromBaseToDec(iNumber, iBase));
          break;
 
         default: printf("\n\n !! Please enter valid choice. !!");
@@ -56,8 +57,8 @@ int main() {
 }
 
 void printMenu(void) {
-    printf("\n\n -- Enter 1 for convert from Decimal To what you want.");
-    printf("\n -- Enter 2 for convert from Binary To Decimal");
+    printf("\n\n -- Enter 1 for convert from Decimal to what you want.");
+    printf("\n -- Enter 2 for convert from what you want To Decimal");
     printf("\n -- Enter 0 for quit");
     printf("\n\n -- Please, enter your choice: ");
 }
@@ -88,13 +89,13 @@ int fromDecToBase(int number, int base) {
 
 }
 
-int fromBinToDec(int binaryNumber) {
+int fromBaseToDec(int binaryNumber, int base) {
 
     int tempNumber = binaryNumber;
 
     int remainder = 0;
 
-    int decimal = 0;
+    int result = 0;
 
     int i = 0;
 
@@ -102,12 +103,12 @@ int fromBinToDec(int binaryNumber) {
 
         remainder = tempNumber % 10;
 
-        decimal = decimal + ( remainder * pow(2, i) );
+        result = result + ( remainder * pow(base, i) );
 
         tempNumber = tempNumber / 10;
 
     }
 
-    return decimal;
+    return result;
 
 }
