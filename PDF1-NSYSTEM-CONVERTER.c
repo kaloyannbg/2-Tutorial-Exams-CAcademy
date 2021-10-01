@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 
+//I WILL MAKE UPDATES TOMMOROW
+
 void printMenu(void);
 int fromDecToBase(int number, int base);
 int fromBinToDec(int number);
