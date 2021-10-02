@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 void printMenu(void);
-void BGNconvert(void);
-void EURconvert(void);
-void USDconvert(void);
+void printBGNconvert(void);
+void printEURconvert(void);
+void printUSDconvert(void);
 
 
 double dBGN = 0;
@@ -22,14 +22,14 @@ int main() {
 
         switch (iChoice)
         {
-        case 1: BGNconvert();
+        case 1: printBGNconvert();
         break;
-        case 2: EURconvert();
+        case 2: printEURconvert();
         break;
-        case 3: USDconvert();
+        case 3: printUSDconvert();
         break;
         case 0: printf(" -- See you later.\n");
-
+        break;
         default: printf(" !! Please, enter valid choice !!");
             break;
         }
@@ -51,7 +51,7 @@ void printMenu(void) {
 
 }
 
-void BGNconvert(void) {
+void printBGNconvert(void) {
 
     printf("Please, enter your amount in BGN: ");
         scanf("%lf", &dBGN);
@@ -68,7 +68,7 @@ void BGNconvert(void) {
 
 }
 
-void EURconvert(void) {
+void printEURconvert(void) {
 
     printf("Please, enter your amount in EUR: ");
         scanf("%lf", &dEUR);
@@ -85,7 +85,7 @@ void EURconvert(void) {
 
 }
 
-void USDconvert(void) {
+void printUSDconvert(void) {
     printf("Please, enter your amount in USD: ");
         scanf("%lf", &dUSD);
         if(dUSD < 0) {
@@ -95,7 +95,7 @@ void USDconvert(void) {
         {
              double dTotalInBGN = dUSD * 1.6865389;
              double dTotalInEUR = dUSD * 0.86231365;
-             printf("-- -- %.2f EUR is %.2f BGN \n",dUSD, dTotalInBGN);
-             printf("-- -- %.2f EUR is %.2f USD \n",dUSD, dTotalInEUR);
+             printf("-- -- %.2f USD is %.2f BGN \n",dUSD, dTotalInBGN);
+             printf("-- -- %.2f USD is %.2f EUR \n",dUSD, dTotalInEUR);
         }
 }
