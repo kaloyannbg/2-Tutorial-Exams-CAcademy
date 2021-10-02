@@ -1,19 +1,22 @@
 #include <stdio.h>
 #include <math.h>
 
-//I WILL UPDATE IT TOMMOROW
-//BUG WITH (16)NSYSTEM, BECAUSE I DONT SHOW 10 LIKE 'a' and etc. I will ask in slack for some teamwork to remove the bug together
-
 void printMenu(void);
 int fromDecToBase(int number, int base);
 int fromBaseToDec(int number, int base);
-int main() {
+void fromDecToHex(int number);
+
+int iHexDigits[50];
+
+int  i = 0, iLength = 0;
 
     int iChoice = 0;
 
     int iNumber = 0;
 
     int iBase = 0;
+
+int main() {
 
     do {
 
@@ -28,10 +31,10 @@ int main() {
         switch (iChoice)
         {
         case 1:
-        printf("\n\n -- Enter your number in Decimal ");
+        printf("\n -- Enter your number in Decimal ");
          scanf("%d", &iNumber);
          iNumber = abs(iNumber);
-         printf("\n\n -- Enter your base ");
+         printf("\n -- Enter your base ");
          scanf("%d", &iBase);
          iBase = abs(iBase);
 
@@ -39,15 +42,24 @@ int main() {
          break;
 
          case 2:
-        printf("\n\n -- Enter your base (Number system): ");
+        printf("\n -- Enter your base (Number system): ");
          scanf("%d", &iBase);
          iBase = abs(iBase);
-         printf("\n\n -- Enter your number in base(%d) number system: ", iBase);
+         printf("\n -- Enter your number in base(%d) number system: ", iBase);
          scanf("%d", &iNumber);
          iNumber = abs(iNumber);
          printf("\n -- Your number in DEC is: %d --", fromBaseToDec(iNumber, iBase));
          break;
+         case 3:
+         printf("\n -- Enter your decimal number: ");
+         scanf("%d", &iNumber);
+         iNumber = abs(iNumber);
+         printf("\n -- Your number in HEX is: ");
+         fromDecToHex(iNumber);
+         break;
 
+         case 0: printf("\n -- Bye Bye!");
+        break;
         default: printf("\n\n !! Please enter valid choice. !!");
             break;
         }
@@ -62,6 +74,7 @@ int main() {
 void printMenu(void) {
     printf("\n\n -- Enter 1 for convert from Decimal to base.");
     printf("\n -- Enter 2 for convert from base to Decimal");
+    printf("\n -- Enter 3 for convert from Decimal to Hex");
     printf("\n -- Enter 0 for quit");
     printf("\n\n -- Please, enter your choice: ");
 }
@@ -113,5 +126,38 @@ int fromBaseToDec(int binaryNumber, int base) {
     }
 
     return result;
+
+}
+
+void fromDecToHex(int number) {
+
+    i = 0;
+    iLength = 0;
+
+    while(number > 0) {
+
+        iHexDigits[i] = number % 16;
+        number = number / 16;
+        i++;
+        iLength++;
+    }
+    printf("0x");
+    for(i = iLength-1; i >= 0; i--) {
+        if(iHexDigits[i] == 10) {
+            printf("A");
+        } else if(iHexDigits[i] == 11) {
+            printf("B");
+        } else if(iHexDigits[i] == 12) {
+            printf("C");
+        } else if(iHexDigits[i] == 13) {
+            printf("D");
+        } else if(iHexDigits[i] == 14) {
+            printf("E");
+        } else if(iHexDigits[i] == 15) {
+            printf("F");
+        } else {
+            printf("%d", iHexDigits[i]);
+        }
+    }
 
 }
