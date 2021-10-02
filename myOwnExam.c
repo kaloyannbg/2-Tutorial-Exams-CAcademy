@@ -2,32 +2,27 @@
 
 int main() {
 
-    double dYears = 0;
+    float fEarthDays = 0;
 
-    printf("\n -- Please enter your ages: ");
+    float fJupiterYears = 0;
 
-    scanf("%lf", &dYears);
+    float fEarthYears = 0;
 
-    double dYearInDays = dYears * 365;
+    float fJupiterYearsInSeconds = 0;
 
-    double dYearsInHours = dYearInDays * 24;
+    printf("\n\n -- Convert earth days to jupiter years. -- ");
 
-    double dYearsInMinutes = dYearsInHours * 60;
+    printf("\n\n -- Enter earth days: ");
 
-    double dYearsInSeconds = dYearsInMinutes * 60;
+    scanf("%f", &fEarthDays);
 
-    double dJupiterYearInSeconds = 378432000; //12 earth years in seconds
+    fJupiterYears = fEarthDays / (365 * 12); // jupiterY = 365 / (365*12) earth years jupiterY = 0.083333
 
-    double dYearsOnJupiterInSeconds = dJupiterYearInSeconds * dYearsInSeconds; //1 jupiter year = 12 earth years
+    fJupiterYearsInSeconds = fJupiterYears * 31556926;
 
+    printf("\n\n -- %.2f earth days in jupiter is: %f years.", fEarthDays, fJupiterYears );
 
-    printf("\n -- %.2f years in days is: %f --", dYears, dYearInDays);
-    printf("\n -- %.2f years in hours is: HOURS:%f --", dYears, dYearsInHours);
-    printf("\n -- %.2f years in minutes is: MINUTES:%f --", dYears, dYearsInMinutes);
-    printf("\n -- %.2f years in minutes is: SECONDS:%f --", dYears, dYearsInSeconds);
-    printf("\n -- %.2f years in seconds on Jupiter is: SECONDS: %f ", dYears, dYearsOnJupiterInSeconds);
-
-
+    printf("\n\n -- %.2f jupiter years in seconds is: %f earth seconds.", fJupiterYears, fJupiterYearsInSeconds );
 
     return 0;
 }
