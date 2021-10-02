@@ -2,7 +2,7 @@
 #include <math.h>
 
 //I WILL UPDATE IT TOMMOROW
-//BUG WITH (16)NSYSTEM, BECAUSE I DONT SHOW 10 LIKE 'a' and etc. I will ask in slack for some teamwork to remove the bug
+//BUG WITH (16)NSYSTEM, BECAUSE I DONT SHOW 10 LIKE 'a' and etc. I will ask in slack for some teamwork to remove the bug together
 
 void printMenu(void);
 int fromDecToBase(int number, int base);
