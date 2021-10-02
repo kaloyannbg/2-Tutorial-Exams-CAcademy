@@ -5,7 +5,6 @@ void printBGNconvert(void);
 void printEURconvert(void);
 void printUSDconvert(void);
 
-
 double dBGN = 0;
 double dEUR = 0;
 double dUSD = 0;
@@ -13,6 +12,10 @@ double dUSD = 0;
 int main() {
 
     int iChoice = 0;
+
+    char cContinue[20];
+
+    cContinue[0] = 'y';
 
     do {
 
@@ -30,12 +33,15 @@ int main() {
         break;
         case 0: printf(" -- See you later.\n");
         break;
-        default: printf(" !! Please, enter valid choice !!");
+        default: printf(" !! Please, enter valid choice !!\n");
             break;
         }
+    if(iChoice != 0) {
+      printf(" -- Do you want to continue with converts? [y/n]: ");
+      scanf("%s", &cContinue);
+    }
 
-
-    } while (iChoice != 0);
+    } while (iChoice != 0 && cContinue[0] != 'n');
 
 
     return 0;
