@@ -2,6 +2,7 @@
 #include <math.h>
 
 //I WILL UPDATE IT TOMMOROW
+//BUG WITH (16)NSYSTEM, BECAUSE I DONT SHOW 10 LIKE 'a' and etc. I will ask for some help tommorow
 
 void printMenu(void);
 int fromDecToBase(int number, int base);
