@@ -8,7 +8,7 @@ int main() {
 
     scanf("%lf", &dWeight);
 
-    dWeightOnTheMoon = dWeight * 17 / 100;
+    dWeightOnTheMoon = (dWeight * 17) / 100;
 
     printf("\n -- Your weight on the moon is: %.2f", dWeightOnTheMoon);
 
