@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 
+//I WILL UPDATE IT TOMMOROW
+
 void printMenu(void);
 int fromDecToBase(int number, int base);
 int fromBaseToDec(int number, int base);
@@ -38,7 +40,7 @@ int main() {
          case 2:
         printf("\n\n -- Enter your base (Number system): ");
          scanf("%d", &iBase);
-         iNumber = abs(iBase);
+         iBase = abs(iBase);
          printf("\n\n -- Enter your number in base(%d) number system: ", iBase);
          scanf("%d", &iNumber);
          iNumber = abs(iNumber);
@@ -57,8 +59,8 @@ int main() {
 }
 
 void printMenu(void) {
-    printf("\n\n -- Enter 1 for convert from Decimal to what you want.");
-    printf("\n -- Enter 2 for convert from what you want To Decimal");
+    printf("\n\n -- Enter 1 for convert from Decimal to base.");
+    printf("\n -- Enter 2 for convert from base to Decimal");
     printf("\n -- Enter 0 for quit");
     printf("\n\n -- Please, enter your choice: ");
 }
