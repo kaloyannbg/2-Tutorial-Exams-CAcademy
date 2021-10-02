@@ -53,6 +53,7 @@ void printMenu(void) {
     printf(" -- Enter 1 for convert from BGN to USD and EUR \n");
     printf(" -- Enter 2 for convert from EUR to USD and BGN \n");
     printf(" -- Enter 3 for convert from USD to EUR and BGN \n");
+    printf(" -- Enter 0 for quit from program \n");
     printf(" -- Please, enter your choice: \n");
 
 }
