@@ -6,7 +6,7 @@ int main() {
 
     int iNumber = 0; int iNumberTwo = 0;
 
-    iNumber = 4, iNumberTwo = 4;
+    iNumber = 1, iNumberTwo = 4;
 
     printf("%d + %d = %d", iNumber, iNumberTwo, addDigit(iNumber, iNumberTwo));
 
